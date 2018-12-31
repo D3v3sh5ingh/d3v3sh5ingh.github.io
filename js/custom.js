@@ -2,14 +2,14 @@
 		Preloder
 	--------------------*/
 	$(window).on('load', function() {
-		$('#preloader').delay(1000).fadeOut('slow');
-		$('body').delay(1000).css({
+		$('#preloader').delay(200).fadeOut('slow');
+		$('body').delay(200).css({
 			'overflow': 'visible'
 		});
 	});
 
 $(function() {
-  $(".secretpopout").delay(1500).fadeIn();
+  $(".secretpopout").delay(1000).fadeIn();
 });
 
 $(document).ready(function(){
