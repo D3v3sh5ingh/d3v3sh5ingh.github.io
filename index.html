@@ -18,14 +18,14 @@
 
 </head>
 
-<!-- TOOK Bg Colour scheme from the poster of https://incubateind.com/ color scheme -->
+<!-- Took Bg Colour scheme from the poster of https://incubateind.com/ color scheme -->
 <body>
       <!-- Beautify This -->
 
     <!-- I have kept all the classes as it is and added Bootstrap and own classes alongside with it -->
   <div class="log-form container" >
 
-        <form class="form-signin rounded-sm shadow   " style="margin: auto; padding: 30px;">
+        <form class="form-signin rounded-sm shadow "  id="formid" style="margin: auto; padding: 30px;">
 
             <div class="mx-auto " style="width:200px"><img class="mb-4 logo" src="https://incubateind.com/images/IncubateIND%20Black.png" alt=""></div>
             <h2  
@@ -52,7 +52,7 @@
                 <!-- Tab1 -->
                 <div id="login" class="container tab-pane active">
                     <label for="inputEmail" title="email"class="sr-only">Email address </label>
-                    <input  id="inputEmail" class="form-control mb-4" placeholder="Email address or Phone number" required autofocus>
+                    <input  type="email" id="inputEmail" class="form-control mb-4" placeholder="Email address" required autofocus>
                     <label for="inputPassword" class="sr-only">Password</label>
                     <input type="password" id="inputPassword" class="form-control mb-4" placeholder="Password" required>
                     <div class="one-line mb-2">
@@ -69,7 +69,7 @@
                             <input type="checkbox" value="login-as-instructor"> Login as hackathon organiser
                         </label>
                     </div>
-                    <button class="btn btn-lg btn-dark btn-block" type="submit">Login</button>
+                    <button class="btn btn-lg btn-dark btn-block" id="submitbut" type="submit">Login</button>
                     <p class="mt-4 mb-0 text-muted small">This page is designed by <a href="http://www.deveshsingh.ml">Devesh Singh</a></p>
                     <!--  Further I can add here FB AND GOOGLE LOGIN BUTTONS -->
                 </div>
@@ -77,12 +77,12 @@
                 <!-- Tab2 : For registration -->
                 <div id="register" class="container  tab-pane fade">
                     <label for="inputEmail" class="sr-only">Email address</label>
-                    <input  id="inputEmail" class="form-control mb-4" placeholder="Email address or Phone number" required autofocus>
+                    <input   type="email" id="inputEmail" class="form-control mb-4" placeholder="Email address"  autofocus>
                     
                     <label for="inputPassword" class="sr-only">Password</label>
-                    <input type="password" title="password" id="inputPassword" class="form-control mb-4" placeholder="Password" required>
+                    <input type="password" title="password" id="inputPassword" class="form-control mb-4" placeholder="Password" >
                     <label for="inputPassword" class="sr-only">Password</label>
-                    <input type="password" title="cnfpassword"id="inputPassword" class="form-control mb-4" placeholder="Repeat Password" required>
+                    <input type="password" title="cnfpassword"id="inputPassword" class="form-control mb-4" placeholder="Repeat Password" >
                     
                     <textarea name="message" id="message" cols="35" rows="4" placeholder="Enter your message here.."></textarea>
                     
@@ -108,7 +108,7 @@
                             <input type="checkbox" value="Register-as-instructor"> Register as hackathon organiser
                         </label>
                     </div>
-                    <button class="btn btn-lg btn-dark btn-block" type="submit">Register</button>
+                    <button class="btn btn-lg btn-dark btn-block" id="submitbut"type="submit">Register</button>
                     <p class="mt-4 mb-0 text-muted small">This page is designed by <a href="http://www.deveshsingh.ml">Devesh Singh</a></p>
                 </div>            
             </div>
@@ -118,6 +118,7 @@
 
   <!-- Beautify Ends -->
 
+  
 
 
     <!-- Bootstrap 4 CDN ================================================== -->
@@ -132,6 +133,30 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+<script>
+    const form = document.querySelector('#formid');
+
+    // listen to the 'submit' event on the form
+    form.addEventListener('submit', evt => {
+    // prevent the submit event 
+    evt.preventDefault();
+
+    swal.fire({
+        title: "Success!",
+        icon: "success",
+        text: "Redirecting in 2 seconds.",
+        type: "success",
+        timer: 2000,
+        showConfirmButton: false
+            }, function(){
+                window.location.href = "//stackoverflow.com";
+       });    
+})
+
+</script>
+
 </body>
 
 </html>
